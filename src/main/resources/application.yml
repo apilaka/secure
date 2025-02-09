@@ -1,0 +1,21 @@
+spring:
+ application:
+  name: secure
+ datasource:
+    url: jdbc:oracle:thin:@192.168.12.111:1521:xe
+    username: c##tata
+    password: saibaba
+    driver-class-name: oracle.jdbc.OracleDriver
+ jpa:
+    hibernate:
+      dialect: Oraclec21Dialect
+
+      ddl-auto: update
+      show-sql: true
+ security:
+    user:
+      name: admin  # Default username
+      password: secret  # Default password
+      #roles: ADMIN  # Assigned roles
+server:
+  port: 8091
