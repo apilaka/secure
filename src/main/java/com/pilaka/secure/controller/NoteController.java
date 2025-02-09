@@ -28,8 +28,8 @@ public class NoteController {
 		return this.noteService.listNotes();
 	}
 	@PostMapping("/createNote")
-	public Note createNote(@PathVariable("notedto") NoteDto dto) {
-		return noteService.createNote(dto);
+	public Note createNote() {
+		return noteService.createNote();
 	}
 	@GetMapping("/admin")
 	public String getAdminPage() {

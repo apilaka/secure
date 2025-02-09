@@ -28,12 +28,13 @@ public class NoteServiceImpl implements NoteService{
 
 
 	@Override
-	public Note  createNote(NoteDto dto) {
+	public Note  createNote() {
 		Note note = new Note();
-		note.setId(dto.id());
-		note.setContent(dto.content());
-		note.setOwnerUserName(dto.ownerUserName());
-		return note;
+ 
+
+		note.setContent("pilakaLakshmi");
+		note.setOwnerUserName("apilaka");
+		return noteRepository.save(note);
 	}
 
 }

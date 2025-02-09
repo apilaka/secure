@@ -2,16 +2,17 @@ package com.pilaka.secure.entity;
 
 import java.util.Set;
 
-
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -21,12 +22,15 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Note {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name="ID")
 	private Long id;
-	@Lob
+    @Column(name="content")
 	private String content;
 	
 	public Long getId() {
@@ -45,6 +49,7 @@ public class Note {
 	/**
 	 * @return the ownerUserName
 	 */
+	@Column(name="OWNER_USER_NAME")
 	public String getOwnerUserName() {
 		return ownerUserName;
 	}
