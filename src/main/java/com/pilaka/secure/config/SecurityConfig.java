@@ -22,7 +22,7 @@ public class SecurityConfig {
         		.requestMatchers("/api/v01/welcome").permitAll()
         		
         		.anyRequest().permitAll()
-        		.anyRequest()
+        
         		);
         http.formLogin(withDefaults());
         //http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
